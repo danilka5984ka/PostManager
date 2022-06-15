@@ -13,6 +13,7 @@ class MovieManagerTest {
     MovieList seventh = new MovieList(7, "Номер один", "Комедия");
 
     MovieManager manager = new MovieManager();
+
     @Test
     public void checkAddMovie() {
         manager.add(first);
@@ -32,7 +33,8 @@ class MovieManagerTest {
     }
 
     @Test
-    public void checkFindLastMovieOne() {
+    public void checkLimitMovieONe() {
+        MovieManager manager = new MovieManager(5);
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -48,14 +50,36 @@ class MovieManagerTest {
     }
 
     @Test
-    public void checkLimitMovieONe() {
-        MovieManager manager = new MovieManager(2);
+    public void checkLimitMovieTwo() {
+        MovieManager manager = new MovieManager(5);
+        manager.add(fifth);
+        manager.add(sixth);
+        manager.add(seventh);
 
-        manager.findAll();
+        manager.findLast();
 
-        MovieList[] actual = {first, second};
-        MovieList[] expected = {first, second};
+        MovieList[] actual = manager.findLast();
+        MovieList[] expected = {seventh, sixth, fifth};
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void checkLimitMovieThree() {
+        MovieManager manager = new MovieManager(5);
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+        manager.add(fourth);
+        manager.add(fifth);
+        manager.add(sixth);
+
+        manager.findLast();
+
+        MovieList[] actual = manager.findLast();
+        MovieList[] expected = {sixth, fifth, fourth, third, second};
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }
