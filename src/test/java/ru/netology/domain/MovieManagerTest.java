@@ -12,10 +12,9 @@ class MovieManagerTest {
     MovieList sixth = new MovieList(6, "Троллию. Мировой тур", "Мультфильм");
     MovieList seventh = new MovieList(7, "Номер один", "Комедия");
 
-    MovieManager manager = new MovieManager();
-
     @Test
     public void checkAddMovie() {
+        MovieManager manager = new MovieManager();
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -34,7 +33,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieONe() {
-        //MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager(5);
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -51,7 +50,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieTwo() {
-        //MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager(5);
         manager.add(fifth);
         manager.add(sixth);
         manager.add(seventh);
@@ -66,7 +65,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieThree() {
-       // MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager(5);
         manager.add(first);
         manager.add(second);
         manager.add(third);

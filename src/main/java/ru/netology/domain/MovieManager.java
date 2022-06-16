@@ -2,10 +2,15 @@ package ru.netology.domain;
 
 public class MovieManager {
 
-    private int maxLimit = 5;
+    private int maxLimit;
     private MovieList[] movies = new MovieList[0];
 
+    public MovieManager(int limit) {
+        maxLimit = limit;
+    }
+
     public MovieManager() {
+        maxLimit = 10;
     }
 
     public void add(MovieList movie) {
