@@ -34,7 +34,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieONe() {
-        MovieManager manager = new MovieManager(5);
+        //MovieManager manager = new MovieManager(5);
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -51,7 +51,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieTwo() {
-        MovieManager manager = new MovieManager(5);
+        //MovieManager manager = new MovieManager(5);
         manager.add(fifth);
         manager.add(sixth);
         manager.add(seventh);
@@ -66,7 +66,7 @@ class MovieManagerTest {
 
     @Test
     public void checkLimitMovieThree() {
-        MovieManager manager = new MovieManager(5);
+       // MovieManager manager = new MovieManager(5);
         manager.add(first);
         manager.add(second);
         manager.add(third);

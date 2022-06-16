@@ -2,15 +2,10 @@ package ru.netology.domain;
 
 public class MovieManager {
 
-    private int limitDefault = 10;
-    private int maxLimit;
+    private int maxLimit = 5;
     private MovieList[] movies = new MovieList[0];
 
     public MovieManager() {
-    }
-
-    public MovieManager(int limit) {
-        this.maxLimit = limit;
     }
 
     public void add(MovieList movie) {
@@ -28,10 +23,8 @@ public class MovieManager {
 
     public MovieList[] findLast() {
         int resultLength;
-        if (maxLimit == limitDefault) {
-            resultLength = limitDefault;
-        } else if (maxLimit < findAll().length) {
-            resultLength = findAll().length - 1;
+        if (maxLimit < findAll().length) {
+            resultLength = maxLimit;
         } else {
             resultLength = findAll().length;
         }
